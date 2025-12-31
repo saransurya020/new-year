@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy New Year 2026 ✨</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html,body{
+  width:100%;
+  height:100%;
+  background:radial-gradient(circle at top,#0b3c7a,#020024);
+  overflow:hidden;
+  font-family:'Montserrat',sans-serif;
+}
+
+/* CAMERA */
+.scene{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  animation:zoom 14s ease-in-out infinite alternate;
+}
+@keyframes zoom{
+  from{transform:scale(1);}
+  to{transform:scale(1.07);}
+}
+
+/* HAPPY TEXT */
+.feliz{
+  font-family:'Pacifico',cursive;
+  font-size:96px;
+  color:#ffbdf7;
+  margin-bottom:40px;
+  text-shadow:0 0 25px #ff4fd8,0 0 70px #7b3cff;
+  animation:glow 3s ease-in-out infinite alternate;
+}
+@keyframes glow{
+  from{text-shadow:0 0 20px #ff4fd8;}
+  to{text-shadow:0 0 60px #ff9bf3;}
+}
+
+/* YEAR */
+.year{
+  display:flex;
+  align-items:flex-end; /* FIX BASELINE */
+  gap:10px;
+  font-size:220px;
+  color:#c7d8ff;
+  text-shadow:0 0 40px rgba(150,180,255,.9);
+}
+
+/* DIGITS */
+.digit{
+  width:120px;
+  text-align:center;
+  line-height:1;
+}
+
+/* SLOT */
+.slot{
+  position:relative;
+  width:120px;
+  height:220px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+/* 5 */
+.five{
+  position:absolute;
+  bottom:0;
+  animation:removeFive 3s ease-in-out 2s forwards;
+}
+@keyframes removeFive{
+  to{
+    transform:translateY(120px) scale(0.3);
+    opacity:0;
+  }
+}
+
+/* 6 */
+.six{
+  position:absolute;
+  bottom:0;
+  opacity:0;
+  transform:translateY(160px) scale(0.2);
+  animation:addSix 3s cubic-bezier(.68,-0.6,.32,1.6) 2s forwards;
+}
+@keyframes addSix{
+  0%{opacity:0;transform:translateY(160px) scale(0.2);}
+  70%{opacity:1;transform:translateY(-10px) scale(1.1);}
+  100%{opacity:1;transform:translateY(0) scale(1);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .feliz{font-size:60px;}
+  .year{font-size:120px;}
+  .digit,.slot{width:70px;height:120px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+  <div class="feliz">Happy New Year ✨</div>
+
+  <div class="year">
+    <span class="digit">2</span>
+    <span class="digit">0</span>
+    <span class="digit">2</span>
+
+    <span class="slot">
+      <span class="digit five">5</span>
+      <span class="digit six">6</span>
+    </span>
+  </div>
+
+</div>
+
+</body>
+</html>
